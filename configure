@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## svn
+export SVN_EDITOR=vim
+
+# autocomplete
+if [ -n "$ZSH_VERSION" ]; then
+   # assume Zsh
+   compctl -/ -W $DEV_DIR cdd
+   compctl -/ -W $DEV_DIR csd
+fi

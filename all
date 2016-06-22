@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source ./aliases
+source ./configure
+source ./functions
+source ./path

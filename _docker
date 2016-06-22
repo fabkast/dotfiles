@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+function dockcli {
+  docker exec -ti $1 bash
+}
+
+function dockip {
+ docker-machine ip $1
+}
+
+function dockenv {
+  [  -z "$1" ] && echo "Machine name required" && exit 1
+  local machineName="$1"
+  local docker_running=$(docker-machine ls | grep $machineName)
+  if [[ "$docker_running" == *"Stopped"* ]]
+  then
+    echo "fyi - docker not running"
+    docker-machine start "$machineName"
+    eval "$(docker-machine env $machineName)"
+  elif [[ "$docker_running" == *"Running"* ]]
+  then
+    eval "$(docker-machine env $machineName)"
+  fi
+  echo "🐳  Active machine: $(docker-machine active) @ $(docker-machine ip $machineName)"
+}

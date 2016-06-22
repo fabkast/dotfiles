@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#Personal stuff
+alias cd..='cd ..'
+alias cd.2='cd ../..'
+alias cd.3='cd ../../..'
+alias cd.4='cd ../../../..'
+alias cd.5='cd ../../../../..'
+alias cddev='cd ~/dev'
+
+alias ls='ls -GFh'
+alias CD='cd'
+alias cgrep="grep --color=always"
+
+alias subl="sublime"
+
+## Git
+alias gstat="git status"
+alias gstash="git stash"
+alias gcommit="git commit"
+alias gbranch="git branch"
+alias gpull="git pull"
+alias gpullo="git pull origin"
+alias gpush="git push"
+alias gco="git checkout"
+alias glog="git log"
+alias gyday="git log --author=Fabian --since=yesterday"

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+# remove untagged images
+docker images | grep "<none>" | awk '{print $3}' | xargs docker rmi
+
+# cleans docker exited and dangling images
+
+docker ps -aqf status=exited | xargs docker rm docker ps -aqf status=exited | xargs docker rm
+
+docker ps -aqf status=exited | xargs docker rm
