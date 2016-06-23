@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Dir where this file resides and root of my dotfiles
+if [[ -e ~/dotfiles ]]; then
+	df_DIR=~/dotfiles
+elif [[ -e $USERPROFILE/dotfiles  ]]; then
+	df_DIR=$USERPROFILE/dotfiles
+else df_DIR=$(dirname $(readlink -f $0))
+fi
+
+export df_DIR
+
+source "$df_DIR/detect-env"
+source "$df_DIR/configure"
+source "$df_DIR/aliases"
+source "$df_DIR/functions"
+source "$df_DIR/path"

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+__ostype=''
+__isunix=true
+
+if [[ "$(uname)" == "Darwin" ]]; then
+   __ostype='osx'      
+elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+   __ostype='linux'
+elif [[ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]] || [[ `uname -s` == CYGWIN* ]] ; then
+   __ostype='windows'
+   __isunix=false
+fi
+
+
+export df_OS_TYPE="$__ostype"
+export df_OS_UNIX=$__isunix

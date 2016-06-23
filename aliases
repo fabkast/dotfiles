@@ -8,11 +8,8 @@ alias cd.4='cd ../../../..'
 alias cd.5='cd ../../../../..'
 alias cddev='cd ~/dev'
 
-alias ls='ls -GFh'
 alias CD='cd'
 alias cgrep="grep --color=always"
-
-alias subl="sublime"
 
 ## Git
 alias gstat="git status"
@@ -25,3 +22,9 @@ alias gpush="git push"
 alias gco="git checkout"
 alias glog="git log"
 alias gyday="git log --author=Fabian --since=yesterday"
+
+if [[ $df_OS_UNIX = true ]]; then
+	alias subl="sublime"
+else
+	alias sublime="sublime_text"
+fi

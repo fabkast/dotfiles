@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export GOPATH=~/.golang_default
-
 export PATH="/usr/local/bin:$HOME/bin:$PATH"
 PATH=${PATH}:$GOPATH/bin
-PATH="${BASH_SOURCE[0]}"/bin:${PATH}
+PATH="$df_DIR"/bin:${PATH}

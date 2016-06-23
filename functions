@@ -9,7 +9,6 @@ function svn-logbyme() {
 }
 
 ######## cool functions ###########
-DEV_DIR="$HOME/dev"
 function cdd () {
     cd "$DEV_DIR/$@"
 }
@@ -18,19 +17,18 @@ function csd() {
    cs "$DEV_DIR/$@"
 }
 
-function osx_cleanFileOpener() {
-   rm ~/Library/Caches/CloudKit/CloudKitMetadata*;killall cloudd
-}
-
-# speed up open new terminal
-function osx_cleanLogs() {
-  sudo rm -rf /private/var/log/asl/*.asl
-}
-
 # cd and then ls
 function cs () {
     cd "$@" && ls
 }
+
+# autocomplete
+if [ -n "$ZSH_VERSION" ]; then
+   # assume Zsh
+   compctl -/ -W $DEV_DIR cdd
+   compctl -/ -W $DEV_DIR csd
+fi
+
 
 # mkdir and then cd into it
 function mkcd {
@@ -43,4 +41,8 @@ function mkcd {
   fi
 }
 
-source ./_docker
+source "$df_DIR/_docker"
+
+if [ "$df_OS_TYPE" = "linux" ]; then
+  source "$df_DIR/_osx"
+fi

@@ -1,0 +1,8 @@
+function osx_cleanFileOpener() {
+   rm ~/Library/Caches/CloudKit/CloudKitMetadata*;killall cloudd
+}
+
+# speed up open new terminal
+function osx_cleanLogs() {
+  sudo rm -rf /private/var/log/asl/*.asl
+}
