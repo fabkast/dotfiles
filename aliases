@@ -10,6 +10,7 @@ alias cddev='cd ~/dev'
 
 alias CD='cd'
 alias cgrep="grep --color=always"
+alias rmrff="rm -rf"
 
 ## Git
 alias gstat="git status"
@@ -23,8 +24,3 @@ alias gco="git checkout"
 alias glog="git log"
 alias gyday="git log --author=Fabian --since=yesterday"
 
-if [[ $df_OS_UNIX = true ]]; then
-	alias subl="sublime"
-else
-	alias sublime="sublime_text"
-fi

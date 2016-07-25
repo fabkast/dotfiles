@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 export PATH="/usr/local/bin:$HOME/bin:$PATH"
-PATH=${PATH}:$GOPATH/bin
+PATH=${PATH}:$GOPATH/bin:/usr/local/go/bin
 PATH="$df_DIR"/bin:${PATH}

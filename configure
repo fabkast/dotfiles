@@ -5,7 +5,7 @@ export SVN_EDITOR=vim
 export DEV_DIR="$HOME/dev"
 
 if [[ $df_OS_UNIX = true ]]; then
-	export GOPATH=~/.golang_default
+	export GOPATH=~/go
 else
 	export GOPATH=C:/Users/fcastillo/.golang_default
 fi
