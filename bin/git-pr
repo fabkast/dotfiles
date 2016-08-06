@@ -1,0 +1,9 @@
+#!/bin/bash
+pr_id=$1
+branch_name="pr-${pr_id}"
+git fetch origin "pull/$pr_id/head:$branch_name"
+
+if [ $? -eq 0 ]
+then
+  git checkout $branch_name
+fi
